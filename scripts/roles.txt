@@ -1,0 +1,5 @@
+Application administrator
+Application developer
+Authentication administrator
+Azure Information Protection administrator
+Company administrator
