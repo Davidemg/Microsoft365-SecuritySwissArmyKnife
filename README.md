@@ -73,13 +73,13 @@ $date =get-date; Set-Msoluser -UserPrincipalName (UPN) -StsRefreshTokensValidFro
 ```
 -----------------------------
 ## Summary #
-
+```
 Get-MsolUser | ForEach-Object { .\Get-MFAStatus.ps1 $_.UserPrincipalName } | Out-GridView
 
 .\Get-MFAStatus.ps1 | Out-GridView
  
 Get-MFAStatus.ps1 -withOutMFAOnly 
- 
+```
 -----------------------------
 ## Auditing #
 
