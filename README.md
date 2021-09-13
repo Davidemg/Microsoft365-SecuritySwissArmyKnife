@@ -5,15 +5,33 @@ Repository of command line scripting for Microsoft services
 
 
 ## Connecting: #
-
+Install the EXO V2 module, MSOnline and AzureAD
+```
+Install-Module -Name ExchangeOnlineManagement
+Install-Module MSOnline
+Install-Module AzureAD
+```
+Import the EXO V2 module, MSOnline and AzureAD
+```
+Import-Module ExchangeOnlineManagement
+Import-Module MSOnline
+Import-Module AzureAD
+```
 Windows PowerShell needs to be configured to run scripts
 ```
 Set-ExecutionPolicy RemoteSigned
 ```
+Connect to Exchange Online 
+```
+Connect-ExchangeOnline
+```
+Connect to Security & Compliance Center
+```
+Connect-IPPSSession
+```
 Connect to Microsoft Online 
 ```
 Connect-MsolService
-Get-MSOLUser
 ```
 Connect to Azure AD 
 ```
@@ -32,7 +50,11 @@ Connect to Exchange Online using Windows PowerShell + MFA
 ```
 Connect-EXOPSSession -UserPrincipalName <UPN>
 ```
-Closes one or more PowerShell session
+Close Exchange sessions 
+```
+Disconnect-ExchangeOnline
+```
+Closes one or more PowerShell session (deprecated)
 ```
 Remove-PSSession $Session
 Get-PSSession | Remove-PSSession
@@ -50,7 +72,22 @@ If you are investigating an incident and you believe a user’s token has been c
 $date =get-date; Set-Msoluser -UserPrincipalName (UPN) -StsRefreshTokensValidFrom $date
 ```
 -----------------------------
+## Summary #
+
+Get-MsolUser | ForEach-Object { .\Get-MFAStatus.ps1 $_.UserPrincipalName } | Out-GridView
+
+.\Get-MFAStatus.ps1 | Out-GridView
+ 
+Get-MFAStatus.ps1 -withOutMFAOnly 
+ 
+-----------------------------
 ## Auditing #
+
+Verify mailbox auditing is on by default
+```
+Get-OrganizationConfig | Format-List AuditDisabled
+```
+
 List all Office 365 mailboxes with mail addresses and stats 
 ```
 Get-Mailbox | Select-Object DisplayName, PrimarySMTPAddress,TotalItemSize | Out-GridView
