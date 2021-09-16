@@ -20,6 +20,7 @@ Import-Module AzureAD
 Windows PowerShell needs to be configured to run scripts
 ```
 Set-ExecutionPolicy RemoteSigned
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 Connect to Exchange Online 
 ```
