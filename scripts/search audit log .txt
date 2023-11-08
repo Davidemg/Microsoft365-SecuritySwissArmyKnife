@@ -1,0 +1,7 @@
+Search-UnifiedAuditLog -Operations New-Mailbox -UserIds mail@mail.nl -ShowDetails -StartDate 07/01/2023 -EndDate 09/27/2023
+
+
+Search-UnifiedAuditLog -Operations Set-MailboxPermission -ObjectIds mail@mail.nl -StartDate 07/01/2023 -EndDate 09/27/2023
+
+
+Search-UnifiedAuditLog -Operations Set-MailboxPermission -StartDate 07/01/2023 -EndDate 09/27/2023
