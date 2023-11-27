@@ -6,7 +6,7 @@
 
 # Account you wish to brute force
 #$username = “admin@microsoft.com”
-$username = 'X@CONTOSO.COM'
+$username = 'davide.guglielmi@curios-it.eu'
 
 # Attempt logins using every password in your password list
 $x=0
