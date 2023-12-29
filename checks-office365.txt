@@ -1,0 +1,38 @@
+**Security Checklist**
+
+1. Are admin accounts segregated?
+2. Is Multi-Factor Authentication (MFA) enabled for all active accounts?
+3. Are specific roles used for user access control?
+4. Is self-service functionality enabled?
+5. Ensure there are fewer than 5 global admins.
+7. Are restrictions configured for guest accounts?
+8. Maintain a custom banned password list.
+9. Allow only admin roles for guest users.
+10. Are devices managed by Azure Active Directory (AAD)?
+11. Is the audit log retention period set to a non-default value?
+12. Disable user consent for unmanaged apps.
+13. Is auto-forwarding of emails disabled?
+14. Are alert policies properly configured?
+15. Utilize Safe attachments and links.
+16. Have anti-phishing policies been configured?
+17. Enable Security Defaults.
+18. Configure Data Loss Prevention (DLP) policies.
+19. Implement custom branding.
+20. Block access from risky countries.
+21. Enable mailbox auditing and unified audit log search.
+22. Implement email authentication: SPF, DKIM, and DMARC.
+23. Eliminate legacy protocols and disable basic authentication.
+24. Enable multi-factor authentication for both admins and users.
+25. Disable mailbox auto-forwarding to remote domains.
+26. Block sign-in for all shared mailboxes.
+27. Adjust anti-spam, anti-malware, and outbound spam policies.
+28. Configure mobile device policies (ActiveSync or Office 365 MDM).
+29. Configure the default Alert policies.
+30. Activate Office 365 Advanced Threat Protection.
+31. Protect mailboxes with a retention policy or litigation hold.
+32. Configure modern device management and conditional access.
+33. Block downloads from Outlook web on unmanaged devices.
+34. Start using Office 365 message encryption features.
+35. Configure Data Loss Prevention (DLP) policies.
+36. Configure Advanced alert policies in Cloud App Security.
+37. Review and monitor OAuth app permissions and notifications.
