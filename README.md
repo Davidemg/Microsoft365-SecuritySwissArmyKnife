@@ -1,24 +1,6 @@
 # ms-commands
 Repository of command line scripting for Microsoft services 
 
-# other usefull repo's 
-https://github.com/vanvfields
-Scripts to help configure Microsoft 365
-
-https://github.com/nyxgeek/o365recon
-script to retrieve information via O365 and AzureAD with a valid cred
-
-https://github.com/mparlakyigit/M365SATReports
-The Microsoft 365 Security Assessment Reports PowerShell script enables you to assess the security of your organization within Microsoft 365 and helps you tighten your structure.
-
-https://github.com/cisagov/ScubaGear
-ScubaGear is an assessment tool that verifies a Microsoft 365 (M365) tenant’s configuration conforms to the policies described in the Secure Cloud Business Applications (SCuBA) Security Configuration Baseline documents.
-)
-
-https://github.com/dafthack/MFASweep
-MFASweep is a PowerShell script that attempts to log in to various Microsoft services using a provided set of credentials and will attempt to identify if MFA is enabled. 
-
-
 ## Connecting: #
 Install the EXO V2 module, MSOnline and AzureAD
 ```
@@ -232,7 +214,31 @@ Get-OrganizationConfig | Format-List AuditDisabled
 -----------------------------
 
 ## References  
-https://github.com/OfficeDev/O365-InvestigationTooling
+
+# other usefull repo's 
+https://github.com/vanvfields
+Scripts to help configure Microsoft 365
+
+https://github.com/nyxgeek/o365recon
+script to retrieve information via O365 and AzureAD with a valid cred
+
+https://github.com/mparlakyigit/M365SATReports
+The Microsoft 365 Security Assessment Reports PowerShell script enables you to assess the security of your organization within Microsoft 365 and helps you tighten your structure.
+
+https://github.com/cisagov/ScubaGear
+ScubaGear is an assessment tool that verifies a Microsoft 365 (M365) tenant’s configuration conforms to the policies described in the Secure Cloud Business Applications (SCuBA) Security Configuration Baseline documents.
+
+https://github.com/dafthack/MFASweep
+MFASweep is a PowerShell script that attempts to log in to various Microsoft services using a provided set of credentials and will attempt to identify if MFA is enabled. 
+
+https://github.com/hornerit/powershell
+Office 365 / Azure, Active Directory, and SharePoint.
+
+https://github.com/DanielChronlund/DCToolbox
+A PowerShell toolbox for Microsoft 365 security fans.
+
+https://github.com/directorcia/Office365/blob/master/best-practices.txt
+
 
 ### Connecting:
 Connect to Exchange Online PowerShell using multi-factor authentication
