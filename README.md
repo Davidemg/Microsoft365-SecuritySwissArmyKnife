@@ -2,8 +2,7 @@
 Repository of command line scripting for Microsoft services 
 
 # other usefull repo's 
-[Repository of command line scripting for Microsoft services 
-](https://github.com/vanvfields
+https://github.com/vanvfields
 Scripts to help configure Microsoft 365
 
 https://github.com/nyxgeek/o365recon
