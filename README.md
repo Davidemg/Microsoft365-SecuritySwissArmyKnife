@@ -12,18 +12,24 @@ This repository contains scripts and commands for managing Microsoft services vi
 
 ## GitHub Repositories for Microsoft 365 Scripts and Tools  
 
-## Condensed References:
+## Other repos:
 
-1. [vanvfields](https://github.com/vanvfields): Scripts for configuring Microsoft 365.
-2. [Brute-Email.ps1](https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Brute-Email.ps1): PowerShell script for brute-forcing email.
-3. [o365recon](https://github.com/nyxgeek/o365recon): Script for information retrieval from O365 and AzureAD using valid credentials.
-4. [M365SATReports](https://github.com/mparlakyigit/M365SATReports): PowerShell script for Microsoft 365 Security Assessment Reports.
-5. [ScubaGear](https://github.com/cisagov/ScubaGear): Tool for verifying Microsoft 365 configuration against SCuBA Security Baseline.
-6. [MFASweep](https://github.com/dafthack/MFASweep): Script to test Microsoft services logins and MFA status.
-7. [hornerit](https://github.com/hornerit/powershell): Scripts for Office 365, Azure, Active Directory, and SharePoint.
-8. [DCToolbox](https://github.com/DanielChronlund/DCToolbox): PowerShell toolbox for Microsoft 365 security.
-9. [Office365 best practices](https://github.com/directorcia/Office365/blob/master/best-practices.txt): A guide on best practices for Office 365.
-
+1. **[vanvfields](https://github.com/vanvfields)**: Scripts for configuring Microsoft 365.
+2. **[Brute-Email.ps1](https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Brute-Email.ps1)**: PowerShell script for brute-forcing email.
+3. **[o365recon](https://github.com/nyxgeek/o365recon)**: Script for information retrieval from O365 and AzureAD using valid credentials.
+4. **[M365SATReports](https://github.com/mparlakyigit/M365SATReports)**: PowerShell script for Microsoft 365 Security Assessment Reports.
+5. **[ScubaGear](https://github.com/cisagov/ScubaGear)**: Tool for verifying Microsoft 365 configuration against SCuBA Security Baseline.
+6. **[MFASweep](https://github.com/dafthack/MFASweep)**: Script to test Microsoft services logins and MFA status.
+7. **[hornerit](https://github.com/hornerit/powershell)**: Scripts for Office 365, Azure, Active Directory, and SharePoint.
+8. **[DCToolbox](https://github.com/DanielChronlund/DCToolbox)**: PowerShell toolbox for Microsoft 365 security.
+9. **[Office365 best practices](https://github.com/directorcia/Office365/blob/master/best-practices.txt)**: A guide on best practices for Office 365.
+10. **[ORCA](https://github.com/cammurray/orca)**: The Office 365 ATP Recommended Configuration Analyzer.
+11. **[O365-InvestigationTooling](https://github.com/OfficeDev/O365-InvestigationTooling)**: Facilitates testing and data acquisition from the Office 365 Management Activity API.
+12. **[O365-Lockdown](https://github.com/LMGsec/O365-Lockdown)**: PowerShell script for securing an Office 365 environment and enabling audit logging.
+13. **[o365creeper](https://github.com/LMGsec/o365creeper)**: Python script for email address validation against Office 365 without login attempts.
+14. **[o365-attack-toolkit](https://github.com/mdsecactivebreach/o365-attack-toolkit)**: Toolkit for OAuth phishing attacks and information extraction using the Microsoft Graph API.
+15. **[O365-Admin-Center](https://github.com/bwya77/O365-Admin-Center)**: GUI application for administering every aspect of Office 365.
+16. **[Office 365 Security Optimisation Assessment](https://github.com/o365soa/Scripts)**: Scripts for Office 365 Security Optimization Assessment, a Microsoft Premier Support engagement.
 
 
 ## Script Usage
