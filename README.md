@@ -3,21 +3,9 @@ This repository contains scripts and commands for managing Microsoft services vi
 
 ## Getting Started
 ### Prerequisites
-Before running the scripts, ensure you have the following modules installed:
-
-Exchange Online Management (EXO V2) Module
-MSOnline Module
-AzureAD Module
-
-## Installation Instructions
-To install the required modules, execute the following PowerShell commands
+### Installation Instructions
 
 
-
-### Connecting: #
-```
-/.GetConnected.ps1 
-```
 -----------------------------
 
 -----------------------------
