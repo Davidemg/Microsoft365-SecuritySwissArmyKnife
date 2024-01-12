@@ -15,7 +15,9 @@ To install the required modules, execute the following PowerShell commands
 
 
 ### Connecting: #
+```
 /.GetConnected.ps1 
+```
 -----------------------------
 ## Summary #
 ```
