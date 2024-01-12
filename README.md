@@ -1,4 +1,4 @@
-# Microsoft Services Command Line Scripting Guide (ms-commands)
+# Microsoft 365 Security Scripting Guide 
 This repository contains scripts and commands for managing Microsoft services via the command line. It's designed to assist administrators and users in efficiently handling various tasks related to Microsoft 365 and related services.
 
 ## Getting Started
