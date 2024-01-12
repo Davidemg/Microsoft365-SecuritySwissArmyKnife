@@ -215,7 +215,7 @@ Get-OrganizationConfig | Format-List AuditDisabled
 
 ## References  
 
-# other usefull repo's 
+### Other GitHub repo's 
 https://github.com/vanvfields
 Scripts to help configure Microsoft 365
 
