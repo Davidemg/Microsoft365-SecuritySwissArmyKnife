@@ -1,4 +1,4 @@
-﻿function Check-MailboxAuditStatus {
+﻿function CheckMailboxWhereAuditDisabled {
     try {
         # Retrieve all user and shared mailboxes
         $allMailboxes = Get-Mailbox -RecipientTypeDetails UserMailbox, SharedMailbox
@@ -23,4 +23,4 @@
 }
 
 # To run the function
-Check-MailboxAuditStatus
+CheckMailboxWhereAuditDisabled 

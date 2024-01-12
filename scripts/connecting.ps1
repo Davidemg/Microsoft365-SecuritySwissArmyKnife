@@ -1,4 +1,0 @@
-Connect-ExchangeOnline
-Connect-MsolService
-Connect-AzureAD
-Connect-IPPSSession

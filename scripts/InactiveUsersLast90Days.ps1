@@ -3,12 +3,9 @@
 import-module MSOnline
 
 #Let's get us an admin cred!
-$userCredential = Get-Credential
 
 #This connects to Azure Active Directory
 Connect-MsolService -Credential $userCredential
-$ExoSession = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $userCredential -Authentication Basic -AllowRedirection
-Import-PSSession $ExoSession
 
 $startDate = (Get-Date).AddDays(-90).ToString('MM/dd/yyyy')
 $endDate = (Get-Date).ToString('MM/dd/yyyy')

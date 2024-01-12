@@ -64,12 +64,31 @@
         # Output in the terminal
         $policyDetails | Format-Table -AutoSize
 
-        # Output in Out-GridView
-        $policyDetails | Out-GridView -Title "Azure AD Conditional Access Policies"
+        # Ask the user if they want to see the policies in GridView
+        $userChoice = Read-Host "Do you want to see the policies in GridView? (Y/N)"
+        
 
-        # Export to CSV
-        $policyDetails | Export-CSV "ConditionalAccessPolicies.csv" -NoTypeInformation
-        Write-Host "Exported policy data to ConditionalAccessPolicies.csv"
+
+      # Check user choice and display output accordingly
+        if ($userChoice -eq 'Y' -or $userChoice -eq 'y') {
+            $policyDetails | Out-GridView -Title "Azure AD Conditional Access Policies"
+        } else {
+            Write-Host "No Out-GridView selected."
+            Write-Host "Showing formatted table instead:"
+            $policyDetails | Format-Table -AutoSize
+        }
+
+        # Ask the user if they want to export the data to CSV
+        $userChoiceCSV = Read-Host "Do you want to export the data to CSV? (Y/N)"
+
+        # Check user choice and export to CSV accordingly
+        if ($userChoiceCSV -eq 'Y' -or $userChoiceCSV -eq 'y') {
+            $policyDetails | Export-CSV "ConditionalAccessPolicies.csv" -NoTypeInformation
+            Write-Host "Exported policy data to ConditionalAccessPolicies.csv"
+        } else {
+            Write-Host "No CSV export selected."
+        }
+
 
     }
     catch {
