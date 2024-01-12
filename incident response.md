@@ -1,5 +1,17 @@
 # O365 Incident Response
 
+Kill all sessions by using the Revoke-AzureADUserAllRefreshToken cmdlet
+```
+Connect-AzureAD
+
+Get-AzureADUser
+
+Get-AzureADUser -SearchString user@user.com | Revoke-AzureADUserAllRefreshToken 
+```
+If you are investigating an incident and you believe a user’s token has been captured, you can invalidate a token with this AAD PowerShell cmdlet
+```
+$date =get-date; Set-Msoluser -UserPrincipalName (UPN) -StsRefreshTokensValidFrom $date
+
 ## Connecting: #
 ### Check for auditBypass
 ```

@@ -1,74 +1,21 @@
-# ms-commands
-Repository of command line scripting for Microsoft services 
+# Microsoft Services Command Line Scripting Guide (ms-commands)
+This repository contains scripts and commands for managing Microsoft services via the command line. It's designed to assist administrators and users in efficiently handling various tasks related to Microsoft 365 and related services.
 
-## Connecting: #
-Install the EXO V2 module, MSOnline and AzureAD
-```
-Install-Module -Name ExchangeOnlineManagement
-Install-Module MSOnline
-Install-Module AzureAD
-```
-Import the EXO V2 module, MSOnline and AzureAD
-```
-Import-Module ExchangeOnlineManagement
-Import-Module MSOnline
-Import-Module AzureAD
-```
-Windows PowerShell needs to be configured to run scripts
-```
-Set-ExecutionPolicy RemoteSigned
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
-Connect to Exchange Online 
-```
-Connect-ExchangeOnline
-```
-Connect to Security & Compliance Center
-```
-Connect-IPPSSession
-```
-Connect to Microsoft Online 
-```
-Connect-MsolService
-```
-Connect to Azure AD 
-```
-Connect-AzureAD
-Get-AzureADUser
-```
-Connect to Exchange Online using Windows PowerShell
-```
-$UserCredential = Get-Credential
+## Getting Started
+### Prerequisites
+Before running the scripts, ensure you have the following modules installed:
 
-$Session = New-PSSession –ConfigurationName Microsoft.Exchange –ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential –Authentication Basic –AllowRedirection
+Exchange Online Management (EXO V2) Module
+MSOnline Module
+AzureAD Module
 
-Import-PSSession $Session
-```
-Connect to Exchange Online using Windows PowerShell + MFA 
-```
-Connect-EXOPSSession -UserPrincipalName <UPN>
-```
-Close Exchange sessions 
-```
-Disconnect-ExchangeOnline
-```
-Closes one or more PowerShell session (deprecated)
-```
-Remove-PSSession $Session
-Get-PSSession | Remove-PSSession
-```
-Kill all sessions by using the Revoke-AzureADUserAllRefreshToken cmdlet
-```
-Connect-AzureAD
+## Installation Instructions
+To install the required modules, execute the following PowerShell commands
 
-Get-AzureADUser
 
-Get-AzureADUser -SearchString user@user.com | Revoke-AzureADUserAllRefreshToken 
-```
-If you are investigating an incident and you believe a user’s token has been captured, you can invalidate a token with this AAD PowerShell cmdlet
-```
-$date =get-date; Set-Msoluser -UserPrincipalName (UPN) -StsRefreshTokensValidFrom $date
-```
+
+### Connecting: #
+/.GetConnected.ps1 
 -----------------------------
 ## Summary #
 ```
@@ -79,8 +26,7 @@ Get-MsolUser | ForEach-Object { .\Get-MFAStatus.ps1 $_.UserPrincipalName } | Out
 Get-MFAStatus.ps1 -withOutMFAOnly 
 ```
 -----------------------------
-## Auditing #
-
+## Auditing users & mailboxes #
 Verify mailbox auditing is on by default
 ```
 Get-OrganizationConfig | Format-List AuditDisabled
@@ -99,10 +45,7 @@ Check mailbox audit delegation
 Get-mailbox | select UserPrincipalName, auditenabled, AuditDelegate, AuditAdmin, AuditLogAgeLimit | Out-gridview
 Get-Mailbox | FL name, audit*
 ```
-Get mobile devices used 
-```
- Get-MobileDevice -Mailbox "User Test" |  Select DeviceModel,DeviceUserAgent,DeviceAccessState,ClientType
-```
+
 Retrieve the permissions assigned  
 https://practical365.com/exchange-server/list-users-access-exchange-mailboxes/
 ```
@@ -116,6 +59,11 @@ https://www.quadrotech-it.com/blog/list-all-users-and-date-of-last-password-chan
 ```
 Get-MsolUser -All | select DisplayName, LastPasswordChangeTimeStamp | Out-GridView
 Get-MsolUser -All | select DisplayName, LastPasswordChangeTimeStamp | Export-CSV LastPasswordChange.csv -NoTypeInformation
+```
+## Auditing mobiles devices #
+Get mobile devices used 
+```
+ Get-MobileDevice -Mailbox "User Test" |  Select DeviceModel,DeviceUserAgent,DeviceAccessState,ClientType
 ```
 -----------------------------
 
@@ -191,10 +139,48 @@ Get the audit log data by email (for TestUser1 mailbox)
 ```
 New-MailboxAuditLogSearch –Mailboxes “TestUser1” –LogonTypes admin, Delegate –StartDate 07/12/2017 –EndDate 11/12/2017 –StatusMailRecipientsadministrator@www.domain.com –ShowDetails
 ```
+Search the Unified Audit log
+
+```
+Search-UnifiedAuditLog -Operations New-Mailbox -UserIds mail@mail.nl -ShowDetails -StartDate 07/01/2023 -EndDate 09/27/2023
+
+Search-UnifiedAuditLog -Operations Set-MailboxPermission -ObjectIds mail@mail.nl -StartDate 07/01/2023 -EndDate 09/27/2023
+
+Search-UnifiedAuditLog -Operations Set-MailboxPermission -StartDate 07/01/2023 -EndDate 09/27/2023
+```
 -----------------------------
 ## Mailbox Auditing 
 
-Enable mailbox audit logging for all the user mailboxes in your organization.
+Enable Mailbox Audit Logging
+
+Command to Enable Audit for All User Mailboxes:
+```
+Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -AuditEnabled $true
+```
+Command to Set Detailed Auditing for Specific Mailbox Actions:
+```
+Get-Mailbox -Filter {AuditEnabled -eq $False} -RecipientTypeDetails UserMailbox, SharedMailbox | Set-Mailbox -AuditEnabled $True –AuditDelegate Create, FolderBind, SendAs, SendOnBehalf, SoftDelete, HardDelete, Update, Move, MoveToDeletedItems, UpdateFolderPermissions
+```
+Audit Bypass Account Check
+To identify accounts with mailbox audit logging bypassed, use this command:
+```
+Get-MailboxAuditBypassAssociation | ? {$_.AuditBypassEnabled -eq $True} | Format-Table Name, WhenCreated, AuditBypassEnabled 
+```
+
+Search Mailbox Audit Log
+For searching the mailbox audit log, use the following format:
+```
+Search-MailboxAuditLog -Identity "firstname lastname" -LogonTypes Admin,Delegate -StartDate MM/DD/YYYY -EndDate MM/DD/YYYY -ResultSize 2000
+```
+
+Verify Mailbox Auditing Status
+To check if mailbox auditing is enabled by default, execute:
+```
+Get-OrganizationConfig | Format-List AuditDisabled
+```
+
+
+
 ```
 Get-Mailbox -ResultSize Unlimited -Filter {RecipientTypeDetails -eq "UserMailbox"} | Set-Mailbox -AuditEnabled $true
 Get-Mailbox -Filter {AuditEnabled -eq $False} -RecipientTypeDetails UserMailbox, SharedMailbox | Set-Mailbox -AuditEnabled $True –AuditDelegate Create, FolderBind, SendAs, SendOnBehalf, SoftDelete, HardDelete, Update, Move, MoveToDeletedItems, UpdateFolderPermissions
@@ -205,7 +191,7 @@ Get-MailboxAuditBypassAssociation | ? {$_.AuditBypassEnabled -eq $True} | Format
 ```
 Search MailboxAuditlog
 ```
-Search-MailboxAuditLog -Identity Dimitri Schmitz -LogonTypes Admin,Delegate -StartDate 06/01/2018 -EndDate 07/20/2018 -ResultSize 2000
+Search-MailboxAuditLog -Identity firstname lastname -LogonTypes Admin,Delegate -StartDate 06/01/2018 -EndDate 07/20/2018 -ResultSize 2000
 ```
 Verify mailbox auditing on by default is turned on
 ```
@@ -213,79 +199,41 @@ Get-OrganizationConfig | Format-List AuditDisabled
 ```
 -----------------------------
 
-## References  
+## GitHub Repositories for Microsoft 365 Scripts and Tools  
 
-### Other GitHub repo's 
-https://github.com/vanvfields
-Scripts to help configure Microsoft 365
+## Condensed References:
 
-https://github.com/nyxgeek/o365recon
-script to retrieve information via O365 and AzureAD with a valid cred
-
-https://github.com/mparlakyigit/M365SATReports
-The Microsoft 365 Security Assessment Reports PowerShell script enables you to assess the security of your organization within Microsoft 365 and helps you tighten your structure.
-
-https://github.com/cisagov/ScubaGear
-ScubaGear is an assessment tool that verifies a Microsoft 365 (M365) tenant’s configuration conforms to the policies described in the Secure Cloud Business Applications (SCuBA) Security Configuration Baseline documents.
-
-https://github.com/dafthack/MFASweep
-MFASweep is a PowerShell script that attempts to log in to various Microsoft services using a provided set of credentials and will attempt to identify if MFA is enabled. 
-
-https://github.com/hornerit/powershell
-Office 365 / Azure, Active Directory, and SharePoint.
-
-https://github.com/DanielChronlund/DCToolbox
-A PowerShell toolbox for Microsoft 365 security fans.
-
-https://github.com/directorcia/Office365/blob/master/best-practices.txt
+1. [vanvfields](https://github.com/vanvfields): Scripts for configuring Microsoft 365.
+2. [Brute-Email.ps1](https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Brute-Email.ps1): PowerShell script for brute-forcing email.
+3. [o365recon](https://github.com/nyxgeek/o365recon): Script for information retrieval from O365 and AzureAD using valid credentials.
+4. [M365SATReports](https://github.com/mparlakyigit/M365SATReports): PowerShell script for Microsoft 365 Security Assessment Reports.
+5. [ScubaGear](https://github.com/cisagov/ScubaGear): Tool for verifying Microsoft 365 configuration against SCuBA Security Baseline.
+6. [MFASweep](https://github.com/dafthack/MFASweep): Script to test Microsoft services logins and MFA status.
+7. [hornerit](https://github.com/hornerit/powershell): Scripts for Office 365, Azure, Active Directory, and SharePoint.
+8. [DCToolbox](https://github.com/DanielChronlund/DCToolbox): PowerShell toolbox for Microsoft 365 security.
+9. [Office365 best practices](https://github.com/directorcia/Office365/blob/master/best-practices.txt): A guide on best practices for Office 365.
 
 
-### Connecting:
-Connect to Exchange Online PowerShell using multi-factor authentication
-https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/mfa-connect-to-exchange-online-powershell
 
-Killing Sessions to a Compromised Office 365 Account  
-https://blogs.technet.microsoft.com/cloudyhappypeople/2017/10/05/killing-sessions-to-a-compromised-office-365-account/
+## Script Usage
+To utilize the scripts in this repository, follow these steps:
+1. **Select the Script**: Choose the script that meets your needs from the list.
+2. **Download and Preparation**: Download the script file. Some scripts may require modifications before use, such as adding your specific parameters or credentials.
+3. **Execution**: Run the script using PowerShell or your preferred command-line interface. Ensure you have the necessary permissions and environment setup.
+4. **Understanding Results**: After execution, interpret the output as per the script's documentation. 
 
-Remove-PSSession  
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/remove-pssession
+For detailed usage examples, refer to the README or documentation section of each script.
 
-### Mailbox:
-A Step-By-Step Guide to Enable Mailbox Auditing of Exchange Online (Office 365)  
-https://www.lepide.com/how-to/enable-mailbox-auditing-of-exchange-online.html
+## Contributing
+We welcome contributions to this repository. If you have a script or command that can benefit others in managing Microsoft services, please consider submitting a pull request. To contribute:
+1. **Fork the Repository**: Create a fork of this repository.
+2. **Make Your Changes**: Add or modify scripts in your fork.
+3. **Submit a Pull Request**: Once you're happy with your changes, submit a pull request for review.
 
-How to Track Who Accessed Mailboxes in Exchange Server 2016  
-https://www.lepide.com/how-to/track-who-accessed-mailboxes-in-exchange-server-2016.html
+Guidelines for contributions, including coding standards and commit message formatting, can be found in the 'CONTRIBUTING.md' file.
 
-Manage mailbox auditing  
-https://docs.microsoft.com/en-us/office365/securitycompliance/enable-mailbox-auditing
+## License
+This repository and its contents are licensed under [Specify License Type]. This license allows for the reuse and modification of the scripts under certain conditions. Please refer to the 'LICENSE' file in the repository for detailed licensing terms.
 
-Office 365: Grant a User Full Mailbox Access to all Mailboxes 
-https://www.petenetlive.com/KB/Article/0001466
-
-Exchange: Mailbox Delegate Report using PowerShell  
-https://gallery.technet.microsoft.com/office/Exchange-Mailbox-Delegate-27d1e4fb
-
-Exchange: Mailbox Delegate Report using PowerShell  
-https://social.technet.microsoft.com/wiki/contents/articles/51341.exchange-mailbox-delegate-report-using-powershell.aspx
-
-### Access:
-Manage Remote PowerShell Access to Exchange Online  
-https://www.petri.com/managing-remote-powershell-access-exchange-online
-
-Control remote PowerShell access to Exchange servers  
-https://docs.microsoft.com/en-us/powershell/exchange/exchange-server/control-remote-powershell-access-to-exchange-servers?view=exchange-ps
-
-Control access to EWS in Exchange  
-https://docs.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-control-access-to-ews-in-exchange
-
-Disabling Basic Authentication for Exchange Online (Preview)  
-https://office365itpros.com/2018/10/24/disable-basic-authentication-exchange-online/
-
-### Misc:
-Defending against Evilginx2 in Office 365  
-http://www.thecloudtechnologist.com/category/security/
-
-The top 6 PowerShell commands you need to know to manage Office 365  
-https://practical365.com/microsoft-365/the-top-6-powershell-commands-you-need-to-know-to-manage-office-365/
-
+## Contact and Support
+For support or queries regarding the scripts, you can reach out via contact@cyberplate.be or [LinkedIn](https://linkedin.com/in/davide-m-guglielmi/). Additionally, for reporting issues or suggesting enhancements, please use the 'Issues' section of this GitHub repository. Your feedback and questions are valuable in improving these scripts and helping the community.
