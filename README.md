@@ -1,18 +1,37 @@
 # Microsoft 365 Security Scripting Guide 
-This repository contains scripts and commands for managing Microsoft services via the command line. It's designed to assist administrators and users in efficiently handling various tasks related to Microsoft 365 and related services.
+Welcome to the Microsoft 365 Security Scripting Guide. This repository is a comprehensive resource for administrators and users who manage Microsoft 365 and related services. It features a variety of PowerShell scripts designed to streamline and automate tasks, ranging from user authentication checks to security assessments and reporting.
+
 
 ## Getting Started
+```
+Run.ps1
+``` 
 ### Prerequisites
 ### Installation Instructions
+## Script Overview
+The main script offers a user-friendly menu-driven interface, enabling users to easily select and execute a wide range of tasks, each handled by specific PowerShell scripts or functions. Key features include:
+
+1. **Execution Policy Management:** Ensures the script runs under the required execution policy.
+2. **Automated Authentication Checks:** Monitors and prompts for re-authentication to maintain security.
+3. **MFA Management Options:** A submenu dedicated to managing multi-factor authentication settings.
+4. **Extensive Task Coverage:** From auditing mailbox rules to exporting security reports, the script covers a broad spectrum of Microsoft 365 management tasks.
+5. **Interactive User Interface:** User-friendly prompts and feedback enhance the ease of use.
+6. **Persistent Menu Loop:** Enables execution of multiple tasks in a single session, improving efficiency.
+7. This guide is intended to help you quickly find and utilize the scripts that best fit your administrative needs in managing Microsoft 365 services.
 
 
+
+## Script Usage
+To utilize the scripts in this repository, follow these steps:
+1. **Select the Script**: Choose the script that meets your needs from the list.
+2. **Download and Preparation**: Download the script file. Some scripts may require modifications before use, such as adding your specific parameters or credentials.
+3. **Execution**: Run the script using PowerShell or your preferred command-line interface. Ensure you have the necessary permissions and environment setup.
+4. **Understanding Results**: After execution, interpret the output as per the script's documentation. 
+
+For detailed usage examples, refer to the README or documentation section of each script.
 -----------------------------
 
------------------------------
-
-## GitHub Repositories for Microsoft 365 Scripts and Tools  
-
-## Other repos:
+## Other Repositories for Microsoft 365 Scripts:
 
 1. **[vanvfields](https://github.com/vanvfields)**: Scripts for configuring Microsoft 365.
 2. **[Brute-Email.ps1](https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Brute-Email.ps1)**: PowerShell script for brute-forcing email.
@@ -32,14 +51,6 @@ This repository contains scripts and commands for managing Microsoft services vi
 16. **[Office 365 Security Optimisation Assessment](https://github.com/o365soa/Scripts)**: Scripts for Office 365 Security Optimization Assessment, a Microsoft Premier Support engagement.
 
 
-## Script Usage
-To utilize the scripts in this repository, follow these steps:
-1. **Select the Script**: Choose the script that meets your needs from the list.
-2. **Download and Preparation**: Download the script file. Some scripts may require modifications before use, such as adding your specific parameters or credentials.
-3. **Execution**: Run the script using PowerShell or your preferred command-line interface. Ensure you have the necessary permissions and environment setup.
-4. **Understanding Results**: After execution, interpret the output as per the script's documentation. 
-
-For detailed usage examples, refer to the README or documentation section of each script.
 
 ## Contributing
 We welcome contributions to this repository. If you have a script or command that can benefit others in managing Microsoft services, please consider submitting a pull request. To contribute:
