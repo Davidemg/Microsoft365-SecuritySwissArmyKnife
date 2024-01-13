@@ -57,9 +57,21 @@ The main script offers a user-friendly menu-driven interface, enabling users to 
 3. **AzureAD:** The Azure Active Directory module for managing Azure AD instances.
 4. **ExchangeOnline:** This module provides cmdlets for managing Exchange Online services.
 
+## Contributing
+We welcome contributions to this repository. If you have a script or command that can benefit others in managing Microsoft services, please consider submitting a pull request. To contribute:
+1. **Fork the Repository**: Create a fork of this repository.
+2. **Make Your Changes**: Add or modify scripts in your fork.
+3. **Submit a Pull Request**: Once you're happy with your changes, submit a pull request for review.
 
+Guidelines for contributions, including coding standards and commit message formatting, can be found in the 'CONTRIBUTING.md' file.
 
-## Other Repositories for Microsoft 365 Scripts:
+## License
+This repository and its contents are licensed under [Specify License Type]. This license allows for the reuse and modification of the scripts under certain conditions. Please refer to the 'LICENSE' file in the repository for detailed licensing terms.
+
+## Contact and Support
+For support or queries regarding the scripts, you can reach out via contact@cyberplate.be or [LinkedIn](https://linkedin.com/in/davide-m-guglielmi/). Additionally, for reporting issues or suggesting enhancements, please use the 'Issues' section of this GitHub repository. Your feedback and questions are valuable in improving these scripts and helping the community.
+
+## Inspiring Repositories for Microsoft 365 Scripting:
 
 1. **[vanvfields](https://github.com/vanvfields)**: Scripts for configuring Microsoft 365.
 2. **[Brute-Email.ps1](https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Brute-Email.ps1)**: PowerShell script for brute-forcing email.
@@ -78,18 +90,3 @@ The main script offers a user-friendly menu-driven interface, enabling users to 
 15. **[O365-Admin-Center](https://github.com/bwya77/O365-Admin-Center)**: GUI application for administering every aspect of Office 365.
 16. **[Office 365 Security Optimisation Assessment](https://github.com/o365soa/Scripts)**: Scripts for Office 365 Security Optimization Assessment, a Microsoft Premier Support engagement.
 
-
-
-## Contributing
-We welcome contributions to this repository. If you have a script or command that can benefit others in managing Microsoft services, please consider submitting a pull request. To contribute:
-1. **Fork the Repository**: Create a fork of this repository.
-2. **Make Your Changes**: Add or modify scripts in your fork.
-3. **Submit a Pull Request**: Once you're happy with your changes, submit a pull request for review.
-
-Guidelines for contributions, including coding standards and commit message formatting, can be found in the 'CONTRIBUTING.md' file.
-
-## License
-This repository and its contents are licensed under [Specify License Type]. This license allows for the reuse and modification of the scripts under certain conditions. Please refer to the 'LICENSE' file in the repository for detailed licensing terms.
-
-## Contact and Support
-For support or queries regarding the scripts, you can reach out via contact@cyberplate.be or [LinkedIn](https://linkedin.com/in/davide-m-guglielmi/). Additionally, for reporting issues or suggesting enhancements, please use the 'Issues' section of this GitHub repository. Your feedback and questions are valuable in improving these scripts and helping the community.
