@@ -2,8 +2,7 @@
 Welcome to the Microsoft 365 Security Scripting Guide. This repository is a comprehensive resource for administrators and users who manage Microsoft 365 and related services. It features a variety of PowerShell scripts designed to streamline and automate tasks, ranging from user authentication checks to security assessments and reporting.
 
 <p align="center">
-  <img width="480"  src="![Microsoft365-SecuritySwissArmyKnife-480p](https://github.com/Davidemg/Microsoft365-SecuritySwissArmyKnife/assets/46671313/df7d3ea8-f3b9-4fda-bae0-5aac1f5f00d8)
-">
+  <img width="600" height="200" src="[https://www.python.org/python-.png](https://github.com/Davidemg/Microsoft365-SecuritySwissArmyKnife/assets/46671313/df7d3ea8-f3b9-4fda-bae0-5aac1f5f00d8)">
 </p>
 
 ## Getting Started
