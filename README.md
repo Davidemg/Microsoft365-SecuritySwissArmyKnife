@@ -29,7 +29,6 @@ To utilize the scripts in this repository, follow these steps:
 4. **Understanding Results**: After execution, interpret the output as per the script's documentation. 
 
 For detailed usage examples, refer to the README or documentation section of each script.
------------------------------
 
 ## Other Repositories for Microsoft 365 Scripts:
 
