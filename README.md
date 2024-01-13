@@ -1,5 +1,5 @@
 # Microsoft 365 Security Swiss Army Knife 
-Welcome to the Microsoft 365 Security Scripting Guide. This repository is a comprehensive resource for administrators and users who manage Microsoft 365 and related services. It features a variety of PowerShell scripts designed to streamline and automate tasks, ranging from user authentication checks to security assessments and reporting.
+Welcome to the Microsoft 365 Security Swiss Army Knife. This repository is a comprehensive resource for administrators and users who manage Microsoft 365 and related services. It features a variety of PowerShell scripts designed to streamline and automate tasks, ranging from user authentication checks to security assessments and reporting.
 
 
 ## Getting Started
