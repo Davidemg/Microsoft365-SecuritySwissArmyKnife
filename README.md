@@ -1,4 +1,4 @@
-# Microsoft 365 Security Scripting Guide 
+# Microsoft 365 Security Swiss Army Knife 
 Welcome to the Microsoft 365 Security Scripting Guide. This repository is a comprehensive resource for administrators and users who manage Microsoft 365 and related services. It features a variety of PowerShell scripts designed to streamline and automate tasks, ranging from user authentication checks to security assessments and reporting.
 
 
@@ -47,15 +47,15 @@ The main script offers a user-friendly menu-driven interface, enabling users to 
 7. This guide is intended to help you quickly find and utilize the scripts that best fit your administrative needs in managing Microsoft 365 services.
 
 ### Prerequisites
-**PowerShell Environment:** The script must be run in a PowerShell environment. Ensure PowerShell is installed on your system.
-**Required Permissions:** You must have administrative privileges to execute certain parts of the script, particularly for setting the execution policy and installing modules.
-**Microsoft 365 Administrative Access:** For the script to function correctly, you need administrative access to Microsoft 365, Azure AD, Exchange Online, and other related services.
+1. **PowerShell Environment:** The script must be run in a PowerShell environment. Ensure PowerShell is installed on your system.
+2. **Required Permissions:** You must have administrative privileges to execute certain parts of the script, particularly for setting the execution policy and installing modules.
+3. **Microsoft 365 Administrative Access:** For the script to function correctly, you need administrative access to Microsoft 365, Azure AD, Exchange Online, and other related services.
 
 ### Modules Used 
-**ExchangeOnlineManagement:** Used for managing Exchange Online services.
-**MSOnline:** The Microsoft Online Services Module for managing Microsoft 365 (formerly Office 365).
-**AzureAD:** The Azure Active Directory module for managing Azure AD instances.
-**ExchangeOnline:** This module provides cmdlets for managing Exchange Online services.
+1. **ExchangeOnlineManagement:** Used for managing Exchange Online services.
+2. **MSOnline:** The Microsoft Online Services Module for managing Microsoft 365 (formerly Office 365).
+3. **AzureAD:** The Azure Active Directory module for managing Azure AD instances.
+4. **ExchangeOnline:** This module provides cmdlets for managing Exchange Online services.
 
 
 
