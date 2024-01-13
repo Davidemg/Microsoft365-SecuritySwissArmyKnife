@@ -6,21 +6,16 @@ Welcome to the Microsoft 365 Security Scripting Guide. This repository is a comp
 
 ### Installation Instructions
 
-**Script Execution**:
    - Download the script to your machine.
    - Open PowerShell as an administrator.
    - Navigate to the script's directory.
    - Run the script (e.g., `.\Run.ps1`).
    - Follow on-screen instructions for task execution.
 
-
-### Installation Information
+### General Information
 1. **Execution Policy**: The script sets the `RemoteSigned` execution policy for the current user. If unable to set due to permissions, it prompts manual setting with administrative rights.
-
 2. **Module Management**: Includes `CheckAndInstallModule` function to verify and install necessary modules (`ExchangeOnlineManagement`, `MSOnline`, `AzureAD`). Modules are imported for cmdlet access.
-
 3. **Service Connections**: Features commands for connecting to Exchange Online, Azure AD, and Microsoft Online Services, with error handling for connection issues.
-
 4. **User Interaction**: Designed for interactivity, requiring user input at various stages and enabling multiple tasks per session through a looped menu system.
 
 
