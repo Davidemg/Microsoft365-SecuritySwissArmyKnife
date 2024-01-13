@@ -71,8 +71,8 @@ This repository and its contents are licensed under [Specify License Type]. This
 ## Contact and Support
 For support or queries regarding the scripts, you can reach out via contact@cyberplate.be or [LinkedIn](https://linkedin.com/in/davide-m-guglielmi/). Additionally, for reporting issues or suggesting enhancements, please use the 'Issues' section of this GitHub repository. Your feedback and questions are valuable in improving these scripts and helping the community.
 
-## Inspiring Repositories for Microsoft 365 Scripting:
-
+## References (GitHub repositories):
+Other inspiring repos related to Microsoft 365 security scripting.
 1. **[vanvfields](https://github.com/vanvfields)**: Scripts for configuring Microsoft 365.
 2. **[Brute-Email.ps1](https://github.com/rvrsh3ll/Misc-Powershell-Scripts/blob/master/Brute-Email.ps1)**: PowerShell script for brute-forcing email.
 3. **[o365recon](https://github.com/nyxgeek/o365recon)**: Script for information retrieval from O365 and AzureAD using valid credentials.
