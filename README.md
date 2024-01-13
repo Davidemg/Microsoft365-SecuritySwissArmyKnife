@@ -3,11 +3,41 @@ Welcome to the Microsoft 365 Security Scripting Guide. This repository is a comp
 
 
 ## Getting Started
-```
-Run.ps1
-``` 
-### Prerequisites
+
 ### Installation Instructions
+
+1. **Execution Policy**: The script sets the `RemoteSigned` execution policy for the current user. If unable to set due to permissions, it prompts manual setting with administrative rights.
+
+2. **Module Management**: Includes `CheckAndInstallModule` function to verify and install necessary modules (`ExchangeOnlineManagement`, `MSOnline`, `AzureAD`). Modules are imported for cmdlet access.
+
+3. **Service Connections**: Features commands for connecting to Exchange Online, Azure AD, and Microsoft Online Services, with error handling for connection issues.
+
+4. **Script Execution**:
+   - Download the script to your machine.
+   - Open PowerShell as an administrator.
+   - Navigate to the script's directory.
+   - Run the script (e.g., `.\Run.ps1`).
+   - Follow on-screen instructions for task execution.
+
+5. **User Interaction**: Designed for interactivity, requiring user input at various stages and enabling multiple tasks per session through a looped menu system.
+
+
+## Script Usage
+To execute the script, use the following command within the PowerShell window:
+```
+.\Run.ps1
+``` 
+Ensure that you have the necessary permissions and privileges to run the script successfully.
+
+### Utiliwing the Script
+
+To utilize the scripts in this repository, follow these steps:
+
+1. **Select the Script**: Execute `Run.ps1` in PowerShell to access a menu of available tasks and scripts.
+2. **Execution**: Choose and run the desired script from the menu, ensuring you have the necessary administrative permissions.
+3. **Understanding Results**: Review the script's output, interpreting it based on the script's specific documentation. 
+
+
 ## Script Overview
 The main script offers a user-friendly menu-driven interface, enabling users to easily select and execute a wide range of tasks, each handled by specific PowerShell scripts or functions. Key features include:
 
@@ -19,16 +49,18 @@ The main script offers a user-friendly menu-driven interface, enabling users to 
 6. **Persistent Menu Loop:** Enables execution of multiple tasks in a single session, improving efficiency.
 7. This guide is intended to help you quickly find and utilize the scripts that best fit your administrative needs in managing Microsoft 365 services.
 
+### Prerequisites
+**PowerShell Environment:** The script must be run in a PowerShell environment. Ensure PowerShell is installed on your system.
+**Required Permissions:** You must have administrative privileges to execute certain parts of the script, particularly for setting the execution policy and installing modules.
+**Microsoft 365 Administrative Access:** For the script to function correctly, you need administrative access to Microsoft 365, Azure AD, Exchange Online, and other related services.
+
+### Modules Used 
+**ExchangeOnlineManagement:** Used for managing Exchange Online services.
+**MSOnline:** The Microsoft Online Services Module for managing Microsoft 365 (formerly Office 365).
+**AzureAD:** The Azure Active Directory module for managing Azure AD instances.
+**ExchangeOnline:** This module provides cmdlets for managing Exchange Online services.
 
 
-## Script Usage
-To utilize the scripts in this repository, follow these steps:
-1. **Select the Script**: Choose the script that meets your needs from the list.
-2. **Download and Preparation**: Download the script file. Some scripts may require modifications before use, such as adding your specific parameters or credentials.
-3. **Execution**: Run the script using PowerShell or your preferred command-line interface. Ensure you have the necessary permissions and environment setup.
-4. **Understanding Results**: After execution, interpret the output as per the script's documentation. 
-
-For detailed usage examples, refer to the README or documentation section of each script.
 
 ## Other Repositories for Microsoft 365 Scripts:
 
