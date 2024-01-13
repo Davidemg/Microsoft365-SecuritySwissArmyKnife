@@ -1,6 +1,7 @@
 <p align="center">
   <img width="240" src="https://github.com/Davidemg/Microsoft365-SecuritySwissArmyKnife/assets/46671313/8c5abe5a-8251-402d-8f48-ac3307b262a3">
 </p>
+
 # Microsoft 365 Security Swiss Army Knife 
 Welcome to the Microsoft 365 Security Scripting Guide. This repository is a comprehensive resource for administrators and users who manage Microsoft 365 and related services. It features a variety of PowerShell scripts designed to streamline and automate tasks, ranging from user authentication checks to security assessments and reporting.
 
