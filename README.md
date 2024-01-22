@@ -92,4 +92,5 @@ Other inspiring repos related to Microsoft 365 security scripting.
 14. **[o365-attack-toolkit](https://github.com/mdsecactivebreach/o365-attack-toolkit)**: Toolkit for OAuth phishing attacks and information extraction using the Microsoft Graph API.
 15. **[O365-Admin-Center](https://github.com/bwya77/O365-Admin-Center)**: GUI application for administering every aspect of Office 365.
 16. **[Office 365 Security Optimisation Assessment](https://github.com/o365soa/Scripts)**: Scripts for Office 365 Security Optimization Assessment, a Microsoft Premier Support engagement.
+17. **[Invoke-SpfDkimDmarc] (https://github.com/T13nn3s/Invoke-SpfDkimDmarc)**: Check the SPF, DKIM and DMARC record for one or multiple domains.
 
